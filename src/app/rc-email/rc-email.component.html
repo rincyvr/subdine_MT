@@ -1,0 +1,10 @@
+<div class="form-group" [formGroup]="myFormGroup">
+
+    <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+        [class.form-control-danger]="myFormGroup.get('email').hasError('required') && myFormGroup.get('email').touched"
+        placeholder="Enter email" (input)="onGetEmail($event.target.value)">
+    <div *ngIf="myFormGroup.get('email').hasError('required') && myFormGroup.get('email').touched" class="form-control-feedback">
+        Please enter your email address</div>
+    <div *ngIf="myFormGroup.get('email').hasError('email') && myFormGroup.get('email').touched && !myFormGroup.get('email').hasError('required')"
+        class="form-control-feedback">That's not an email address</div>
+</div>

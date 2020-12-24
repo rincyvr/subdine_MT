@@ -1,0 +1,16 @@
+<div class="container " align="center">
+
+    <div class="card" >
+        <div class="card-block">
+            <h4 class="card-title">Login</h4>
+            <div>
+                <form [formGroup]="form" novalidate>
+                    <app-rc-email  [myFormGroup]="form" myFormGroupName="email" (onGettingEmail)="onGetEmail($event)"></app-rc-email>
+
+                    <app-rc-password  [myFormGroup]="form" myFormGroupName="pwd" (onGettingPassword)="onGetPassword($event)"></app-rc-password>
+                   
+                    <app-rc-login (onSubmitting)="onSubmit($event)"></app-rc-login>
+                </form>
+            </div>
+        </div>
+    </div>

@@ -1,1 +1,35 @@
-<p>home works!</p>
+<div class="container ">
+
+  <ul class="welcome">
+    <li ><a class="head1">Checkout</a></li>
+    <li ><a class="head1">Wishlist</a></li>
+    <li style="margin-left: 500px;"><a class="head1">Welcome To Our Fashion Store</a></li>
+    <li style="float:right"><a class="head1"><i class="fa fa-search" aria-hidden="true"><i class="fa fa-user"
+            aria-hidden="true"></i><i class="fa fa-cart-plus" aria-hidden="true"></i></i></a></li>
+  </ul>
+
+  <ul class="style">
+    <li ><a class="head2">Contact Us</a>
+    <div>9874563210</div></li>
+    <li style="margin-left: 500px;"><a class="head2" style="font-weight: bolder;">St<span style="color: red;">y</span>le</a></li>
+    <li style="float:right"><a class="head2">Follow Us</a>
+      <div>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </div>
+    </li>
+  </ul>
+
+  <div class="card">
+    <button type="button" (click)="onPrevious()" [disabled]="counter===0">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i>
+    </button>
+    <ng-container *ngFor="let img of images; let i=index">
+      <img [src]="img" style="height:500px; width:90%" *ngIf="i===counter" />
+    </ng-container>
+    <button type="button" (click)="onNext()" [disabled]="this.counter == this.images.length - 1">
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
